@@ -8,6 +8,7 @@ import {
 import React, {useEffect, useRef} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Swiper from 'react-native-swiper';
+import {colorss} from '../components/colorss';
 export default function OnBoarding({navigation}) {
   const swiper = useRef(null);
 
@@ -46,7 +47,7 @@ export default function OnBoarding({navigation}) {
         }>
         <View>
           <ImageBackground
-            source={require('../images/ManSmartphone.jpg')}
+            source={require('../images/intro1.png')}
             style={{width: '100%', height: '100%'}}>
             <LinearGradient
               colors={['#0e143700', '#0e1437']}
@@ -55,16 +56,16 @@ export default function OnBoarding({navigation}) {
               end={{x: 0.5, y: 1.5}}
             />
             <View style={styles.sectionContainer}>
-              <Text style={styles.titleStyle}>Manage your</Text>
-              <Text style={styles.titleStyle}>company with</Text>
-              <Text style={styles.titleStyle}>a touch on</Text>
-              <Text style={styles.titleStyle}>your smartphone</Text>
+              <Text style={styles.titleStyle}>Get Lean</Text>
+              <Text style={styles.titleStyle}>with us!</Text>
+              <Text style={styles.titleStyle}>Have a healthy</Text>
+              <Text style={styles.titleStyle}>Lifestyle!</Text>
             </View>
           </ImageBackground>
         </View>
         <View>
           <ImageBackground
-            source={require('../images/Notification.png')}
+            source={require('../images/intro2.png')}
             style={{width: '100%', height: '100%'}}>
             <LinearGradient
               colors={['#0e143700', '#0e1437']}
@@ -73,15 +74,15 @@ export default function OnBoarding({navigation}) {
               end={{x: 0.5, y: 1.5}}
             />
             <View style={styles.sectionContainer}>
-              <Text style={styles.titleStyle}>Receive notifications</Text>
-              <Text style={styles.titleStyle}>and updates</Text>
-              <Text style={styles.titleStyle}>in real time</Text>
+              <Text style={styles.titleStyle}>Get your workout</Text>
+              <Text style={styles.titleStyle}>routines right with</Text>
+              <Text style={styles.titleStyle}>us and get fit</Text>
             </View>
           </ImageBackground>
         </View>
         <View>
           <ImageBackground
-            source={require('../images/Document1.png')}
+            source={require('../images/intro3.png')}
             style={{width: '100%', height: '100%'}}>
             <LinearGradient
               colors={['#0e143700', '#0e1437']}
@@ -90,9 +91,9 @@ export default function OnBoarding({navigation}) {
               end={{x: 0.5, y: 1.5}}
             />
             <View style={styles.sectionContainer}>
-              <Text style={styles.titleStyle}>Save and access</Text>
-              <Text style={styles.titleStyle}>all your company</Text>
-              <Text style={styles.titleStyle}>documents in one place</Text>
+              <Text style={styles.titleStyle}>High End Machinery</Text>
+              <Text style={styles.titleStyle}>Capable Trainers</Text>
+              <Text style={styles.titleStyle}>Join CORE today!</Text>
             </View>
           </ImageBackground>
         </View>
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#e8fd45',
+    backgroundColor: colorss.orange,
     marginTop: 26,
     marginBottom: 40,
     bottom: 0,

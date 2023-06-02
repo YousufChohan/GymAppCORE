@@ -22,6 +22,8 @@ import ReactNativeBiometrics from 'react-native-biometrics';
 import {setSidebar} from '../reducers/sidebar';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import LoadingModal from '../components/loadingScreen';
+import {color} from 'react-native-reanimated';
+import {colorss} from '../components/colorss';
 
 const rnBiometrics = ReactNativeBiometrics;
 
@@ -230,8 +232,8 @@ export default function SignIn({navigation}) {
       {!loader ? (
         <View style={{height: '100%'}}>
           <ImageBackground
-            source={require('../images/SignIn.jpg')}
-            style={{width: '100%', height: 250}}>
+            source={require('../images/login.png')}
+            style={{width: '100%', height: 380}}>
             <View style={styles.topheader}>
               <View style={styles.textView}>
                 <Text style={styles.textStyle}>Sign In</Text>
@@ -352,7 +354,7 @@ export default function SignIn({navigation}) {
                     <Text
                       style={{
                         fontSize: 14,
-                        color: '#e8fd45',
+                        color: colorss.purple,
                         fontWeight: 'bold',
                         textDecorationLine: 'underline',
                       }}>
@@ -429,11 +431,11 @@ export default function SignIn({navigation}) {
                   alignSelf: 'center',
                   justifyContent: 'flex-end',
                 }}>
-                <Image
+                {/* <Image
                   resizeMode="contain"
                   style={{width: PAGE_WIDTH - 186}}
                   source={require('../images/Tagline.png')}
-                />
+                /> */}
               </View>
             </View>
           </KeyboardAwareScrollView>
@@ -452,7 +454,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'flex-end',
   },
-  textStyle: {fontSize: 35, fontWeight: 'bold', color: '#FFF'},
+  textStyle: {fontSize: 35, fontWeight: 'bold', color: colorss.white},
   textStyle2: {fontSize: 16, fontWeight: '400', color: '#FFF'},
   bottomSection: {
     flexGrow: 1,
@@ -470,7 +472,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#e8fd45',
+    backgroundColor: colorss.purple,
     marginBottom: 15,
   },
 });
