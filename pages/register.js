@@ -13,15 +13,17 @@ import {
   Alert,
   KeyboardAvoidingView,
 } from 'react-native';
-import {TextInput} from 'react-native-paper';
+import {RadioButton, TextInput} from 'react-native-paper';
 import TextField from '../components/inputField';
 import React, {useState, useRef} from 'react';
 import IntlPhoneInput from 'react-native-international-telephone-input';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import Lottie from 'lottie-react-native';
-
 import {REACT_APP_BASE_URL} from '@env';
+import {colorss} from '../components/colorss';
+import {ToggleButton} from 'react-native-paper';
+import {source} from 'deprecated-react-native-prop-types/DeprecatedImagePropType';
 
 const {width: PAGE_WIDTH, height: PAGE_HEIGHT} = Dimensions.get('window');
 
@@ -36,12 +38,14 @@ export default function Register({navigation}) {
   const [dialCode, setDialCode] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [companyName, setCompanyName] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
+  const [gender, setGender] = useState('Gender');
 
   function sendData() {
     console.log({
       firstName: firstName,
       lastName: lastName,
-      email: email,
+      gender: gender,
       mobile: phoneNumber,
       dialCode: dialCode,
       isVerified: false,
@@ -155,7 +159,7 @@ export default function Register({navigation}) {
         </View>
       </Modal>
       <ImageBackground
-        source={require('../images/SignIn.jpg')}
+        source={require('../images/Signup.png')}
         style={{width: '100%', height: 250}}>
         <View style={styles.topheader}>
           <View style={styles.textView}>
@@ -167,10 +171,10 @@ export default function Register({navigation}) {
                 source={require('../images/Back.png')}
               />
             </TouchableOpacity>
-            <Text style={styles.textStyle}>Register for</Text>
-            <Text style={[styles.textStyle, {paddingBottom: 20}]}>
-              New Account
+            <Text style={[styles.textStyle, {paddingTop: 25}]}>
+              Register for
             </Text>
+            <Text style={[styles.textStyle]}>New Account</Text>
             {/* <Text style={styles.textStyle2}>
               Fill out the details below to signup for a Virtuzone official
               account.
@@ -178,10 +182,10 @@ export default function Register({navigation}) {
           </View>
         </View>
       </ImageBackground>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={styles.container}>
-        <ScrollView style={styles.bottomSection}>
+      <ScrollView style={styles.bottomSection}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={styles.container}>
           <View style={{height: '100%', padding: 24}}>
             <SafeAreaView style={{marginBottom: 20}}>
               <TextField
@@ -220,6 +224,44 @@ export default function Register({navigation}) {
               />
             </SafeAreaView>
 
+            <SafeAreaView
+              style={{
+                backgroundColor: colorss.white,
+                marginBottom: 20,
+                borderWidth: 1,
+                borderRadius: 10,
+                borderColor: colorss.purple,
+              }}>
+              <View
+                style={{marginTop: 5, display: 'flex', flexDirection: 'row'}}>
+                <Image
+                  resizeMode="contain"
+                  style={{marginTop: 20, marginLeft: 9, width: 25, height: 25}}
+                  source={require('../images/gender.png')}
+                />
+                <Text style={{marginTop: 20, marginLeft: 5, fontSize: 16}}>
+                  Gender
+                </Text>
+                <ToggleButton.Row
+                  style={{marginLeft: 150, marginTop: 0, marginBottom: 5}}
+                  onValueChange={gender => setGender(gender)}
+                  gender={gender}>
+                  <View>
+                    <ToggleButton
+                      gender="Male"
+                      icon={require('../images/male.png')}></ToggleButton>
+                    <Text style={{marginLeft: 3}}>Male</Text>
+                  </View>
+                  <View>
+                    <ToggleButton
+                      style={{marginLeft: 10}}
+                      gender="Female"
+                      icon={require('../images/femenine.png')}></ToggleButton>
+                    <Text style={{marginLeft: 6}}>Female</Text>
+                  </View>
+                </ToggleButton.Row>
+              </View>
+            </SafeAreaView>
             <SafeAreaView style={{marginBottom: 20}}>
               <TextField
                 label="Email Address"
@@ -237,25 +279,6 @@ export default function Register({navigation}) {
                 }
               />
             </SafeAreaView>
-
-            <SafeAreaView style={{marginBottom: 20}}>
-              <TextField
-                label="Company Name"
-                onChangeText={text => setCompanyName(text)}
-                left={
-                  <TextInput.Icon
-                    name={() => (
-                      <Image
-                        resizeMode="contain"
-                        style={{width: 25}}
-                        source={require('../images/password_icon.png')}
-                      />
-                    )}
-                  />
-                }
-              />
-            </SafeAreaView>
-
             <SafeAreaView style={{marginBottom: 20}}>
               <IntlPhoneInput
                 // flagStyle={{display: 'none'}}
@@ -377,7 +400,7 @@ export default function Register({navigation}) {
               </Text>
             </TouchableOpacity>
 
-            <View
+            {/* <View
               style={{
                 marginBottom: 24,
                 alignSelf: 'center',
@@ -388,10 +411,10 @@ export default function Register({navigation}) {
                 style={{width: PAGE_WIDTH - 186}}
                 source={require('../images/Tagline.png')}
               />
-            </View>
+            </View> */}
           </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </View>
   );
 }
@@ -403,7 +426,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
-  textStyle: {fontSize: 35, fontWeight: 'bold', color: '#FFF'},
+  textStyle: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    color: colorss.white,
+  },
   textStyle2: {fontSize: 16, fontWeight: '400', color: '#FFF'},
 
   bottomSection: {
@@ -425,7 +452,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#e8fd45',
+    backgroundColor: colorss.purple,
     marginBottom: 15,
   },
   centeredView: {
