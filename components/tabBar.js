@@ -39,7 +39,7 @@ export default function MyTabBar({state, descriptors, navigation}) {
     <Animated.View
       style={{
         position: 'absolute',
-        bottom: -42,
+        bottom: 0,
         left: 0,
         width: '100%',
         transform: [{translateY: upValue}],
@@ -49,7 +49,7 @@ export default function MyTabBar({state, descriptors, navigation}) {
         <View
           style={{
             position: 'absolute',
-            bottom: 32,
+            bottom: -25,
             left: 24,
             zIndex: 20,
             flexDirection: 'row',
@@ -58,7 +58,7 @@ export default function MyTabBar({state, descriptors, navigation}) {
             borderRadius: 50,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: colorss.orange,
+            backgroundColor: colorss.black,
             borderRadius: 10,
             paddingHorizontal: 25,
           }}>
