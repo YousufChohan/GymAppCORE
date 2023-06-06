@@ -45,12 +45,12 @@ export default function MyTabBar({state, descriptors, navigation}) {
         transform: [{translateY: upValue}],
         zIndex: 20,
       }}>
-      <View style={{paddingHorizontal: 24, zIndex: 1}}>
+      <View style={{ zIndex: 1}}>
         <View
           style={{
             position: 'absolute',
             bottom: -25,
-            left: 24,
+            left: 0,
             zIndex: 20,
             flexDirection: 'row',
             backgroundColor: '#fff',

@@ -24,6 +24,7 @@ import Animated, {
 
 import {colorss} from '../components/colorss';
 import {
+  FlatList,
   Gesture,
   GestureDetector,
   State,
@@ -34,9 +35,38 @@ import logo from '../images/CORE2.png'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg'
-
+import PeopleImage from '../components/homePeople'
 export default function Home({navigation}) {
   
+const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+    img:profile
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+    img:profile
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+    img:profile
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+    img:profile
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+    img:profile
+  },
+];
+
+
   
   return (
    <SafeAreaView style={styles.container}>
@@ -79,6 +109,54 @@ export default function Home({navigation}) {
           </View>
         </ImageBackground>
       </View>
+      <View>
+        <ImageBackground imageStyle={{borderRadius:20}} style={styles.imgbg} source={require('../images/wk2.jpg')}>
+          <View style={styles.card}>
+            <Text style={styles.cardText}>Workout</Text>
+            <TouchableOpacity>
+             <Text style={styles.button}>Routines</Text>
+            </TouchableOpacity>
+            
+          </View>
+        </ImageBackground>
+      </View>
+      <View>
+        <ImageBackground imageStyle={{borderRadius:20}} style={styles.imgbg} source={require('../images/wk3.jpg')}>
+          <View style={styles.card}>
+            <Text style={styles.cardText}>Meal Plans</Text>
+            <TouchableOpacity>
+             <Text style={styles.button}>Meal Plans</Text>
+            </TouchableOpacity>
+            
+          </View>
+        </ImageBackground>
+      </View>
+
+      <View>
+        <View style={styles.peopleHeading}>
+          <Text style={styles.ph1}>People</Text>
+          <Text style={styles.ph2}>Friends</Text>
+        </View>
+        <View style={styles.people}>
+            <ScrollView style={styles.peopleScroll}>
+            <FlatList horizontal={true} data={DATA}   renderItem={({item}) => <PeopleImage image={item.img} text={item.title} />}>
+
+            </FlatList>
+           </ScrollView>
+          </View>
+      </View>
+
+      <View>
+        <ImageBackground imageStyle={{borderRadius:20}} style={styles.imgbg} source={require('../images/wk3.jpg')}>
+          <View style={styles.card}>
+            <Text style={styles.cardText}>Meal Plans</Text>
+            <TouchableOpacity>
+             <Text style={styles.button}>Meal Plans</Text>
+            </TouchableOpacity>
+            
+          </View>
+        </ImageBackground>
+      </View>
    
       </ScrollView>
    
@@ -93,7 +171,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:colorss.white,
     alignItems: 'center',
-    
     width:'100%',
     height:'90%'
 
@@ -169,5 +246,31 @@ const styles = StyleSheet.create({
      borderRadius:5,
      height:25,
      width:70
+  },
+  peopleHeading:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginTop:15
+  },
+  ph1:{
+    color:colorss.orange,
+    fontSize:20
+  },
+  ph2:{
+    fontSize:20,
+    color:colorss.purple
+  },
+  people:{
+    flexDirection:'row',
+    justifyContent:'space-evenly'
+   
+  },
+  peopleScroll:{
+
+  },
+  image2:{
+    marginTop:'5%',
+    height:125,
+    resizeMode:'contain'
   }
 });
