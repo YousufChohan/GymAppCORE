@@ -36,7 +36,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg';
 import PeopleImage from '../components/homePeople';
-export default function Home({navigation}) {
+export default function MealPlans({navigation}) {
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -55,69 +55,23 @@ export default function Home({navigation}) {
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      title: 'Foruth Item',
       img: profile,
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      title: '5 Item',
       img: profile,
     },
   ];
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
-        <View style={styles.view}>
-          <Image style={styles.logo} source={logo} />
-          <Text style={styles.text1}>Welcome Muhammad</Text>
-          <Text style={styles.text2}>Reach Your Goals Today!</Text>
-          <Image style={styles.image} source={profile}></Image>
-        </View>
-
-        <View style={styles.tab}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon
-              style={{marginRight: 5}}
-              name="fire"
-              size={28}
-              color={colorss.orange}
-            />
-            <Text style={styles.tabText}>
-              Calories: <Text style={{color: colorss.purple}}>871 </Text>
-            </Text>
-          </View>
-
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon2
-              style={{marginRight: 5}}
-              name="cup-water"
-              size={28}
-              color="#19D2F8"
-            />
-            <Text style={styles.tabText}>
-              Water: <Text style={{color: colorss.purple}}>10 glasses </Text>
-            </Text>
-          </View>
-        </View>
-        <View style={styles.tab}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon
-              style={{marginRight: 7}}
-              name="walking"
-              size={28}
-              color="#FFE000"
-            />
-            <Text style={styles.tabText}>
-              Steps: <Text style={{color: colorss.purple}}>12000 </Text>
-            </Text>
-          </View>
-        </View>
         <View>
           <ImageBackground
             imageStyle={{borderRadius: 20}}
             style={styles.imgbg}
-            source={wk1}>
+            source={require('../images/whitegradient.png')}>
             <View style={styles.card}>
               <Text style={styles.cardText}>Workout</Text>
               <TouchableOpacity>
@@ -130,7 +84,7 @@ export default function Home({navigation}) {
           <ImageBackground
             imageStyle={{borderRadius: 20}}
             style={styles.imgbg}
-            source={require('../images/wk2.jpg')}>
+            source={require('../images/whitegradient.png')}>
             <View style={styles.card}>
               <Text style={styles.cardText}>Workout</Text>
               <TouchableOpacity>
@@ -143,42 +97,61 @@ export default function Home({navigation}) {
           <ImageBackground
             imageStyle={{borderRadius: 20}}
             style={styles.imgbg}
-            source={require('../images/wk3.jpg')}>
+            source={require('../images/whitegradient.png')}>
+            <View style={styles.card}>
+              <View>
+                <Image
+                  style={styles.cardImage}
+                  source={require('../images/mealexample.jpg')}
+                />
+              </View>
+              <View
+                style={{
+                  marginLeft: 10,
+                  height: 150,
+                  width: '65%',
+                  // backgroundColor: colorss.black,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-evenly',
+                }}>
+                <View
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text style={styles.cardText}>Bhindi aur Loki</Text>
+                  <Text style={styles.button}>Sabzi</Text>
+                </View>
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                  <View style={{display: 'flex', flexDirection: 'row'}}>
+                    <Image
+                      style={styles.cardImage}
+                      source={require('../images/mealexample.jpg')}
+                    />
+                    <Text></Text>
+                  </View>
+                  <View style={{display: 'flex', flexDirection: 'row'}}></View>
+                </View>
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                  <Text style={styles.cardText}>Meal Type</Text>
+                  <Text style={styles.button}>Meal Type</Text>
+                </View>
+              </View>
+            </View>
+          </ImageBackground>
+        </View>
+
+        <View>
+          <ImageBackground
+            imageStyle={{borderRadius: 20}}
+            style={styles.imgbg}
+            source={require('../images/whitegradient.png')}>
             <View style={styles.card}>
               <Text style={styles.cardText}>Meal Plans</Text>
               <TouchableOpacity
-                onPress={() => navigation.navigate('MealPlans')}>
-                <Text style={styles.button}>Meal Plans</Text>
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        </View>
-
-        <View>
-          <View style={styles.peopleHeading}>
-            <Text style={styles.ph1}>People</Text>
-            <Text style={styles.ph2}>Friends</Text>
-          </View>
-          <View style={styles.people}>
-            <ScrollView style={styles.peopleScroll}>
-              <FlatList
-                horizontal={true}
-                data={DATA}
-                renderItem={({item}) => (
-                  <PeopleImage image={item.img} text={item.title} />
-                )}></FlatList>
-            </ScrollView>
-          </View>
-        </View>
-
-        <View>
-          <ImageBackground
-            imageStyle={{borderRadius: 20}}
-            style={styles.imgbg}
-            source={require('../images/wk3.jpg')}>
-            <View style={styles.card}>
-              <Text style={styles.cardText}>Meal Plans</Text>
-              <TouchableOpacity>
+                onPress={() => navigation.navigate('ForgotPassword')}>
                 <Text style={styles.button}>Meal Plans</Text>
               </TouchableOpacity>
             </View>
@@ -227,6 +200,7 @@ const styles = StyleSheet.create({
     height: 175,
     resizeMode: 'contain',
   },
+  meatype: {},
   tab: {
     marginTop: '10%',
 
@@ -242,21 +216,34 @@ const styles = StyleSheet.create({
   },
   imgbg: {
     marginTop: 15,
-    borderRadius: 100,
+    borderRadius: 10,
     height: 140,
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
   },
   card: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 200,
+    // justifyContent: 'space-between',
+    borderRadius: 20,
   },
   cardText: {
-    color: colorss.white,
+    color: colorss.black,
     fontSize: 20,
+  },
+  cardImage: {
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    resizeMode: 'cover',
+    width: 100,
+    height: 140,
+  },
+  icon: {
+    width: 100,
   },
   button: {
     backgroundColor: colorss.orange,
@@ -267,6 +254,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 5,
     height: 25,
+    fontSize: 16,
     paddingHorizontal: 5,
     //  width:70
   },

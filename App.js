@@ -60,6 +60,7 @@ import {REACT_APP_BASE_URL} from '@env';
 import axios from 'axios';
 
 import ForgotPassword from './pages/forgotPassword';
+import MealPlans from './pages/mealPlans';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -268,6 +269,8 @@ const App = () => {
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="Notifications" component={NotificationScreen} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="MealPlans" component={MealPlans} />
+
             {/* <Stack.Screen name="AddCompany" component={AddCompany} />
             <Stack.Screen name="UpdatePhone" component={UpdatePhone} />
             
