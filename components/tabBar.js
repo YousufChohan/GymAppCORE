@@ -7,13 +7,13 @@ import {
   Animated,
   Easing,
 } from 'react-native';
-import React, {useEffect} from 'react';
-import {useSelector} from 'react-redux';
-import {colorss} from './colorss';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { colorss } from './colorss';
 
-export default function MyTabBar({state, descriptors, navigation}) {
+export default function MyTabBar({ state, descriptors, navigation }) {
   var upValue = React.useRef(new Animated.Value(0.1)).current;
-  const {sidebar} = useSelector(state => state.sidebar);
+  const { sidebar } = useSelector(state => state.sidebar);
 
   moveUD = () => {
     Animated.timing(upValue, {
@@ -42,15 +42,15 @@ export default function MyTabBar({state, descriptors, navigation}) {
         bottom: 0,
         left: 0,
         width: '100%',
-        transform: [{translateY: upValue}],
+        transform: [{ translateY: upValue }],
         zIndex: 20,
       }}>
-      <View style={{paddingHorizontal: 24, zIndex: 1}}>
+      <View style={{ zIndex: 1 }}>
         <View
           style={{
             position: 'absolute',
             bottom: -25,
-            left: 24,
+            left: 0,
             zIndex: 20,
             flexDirection: 'row',
             backgroundColor: '#fff',
@@ -59,17 +59,17 @@ export default function MyTabBar({state, descriptors, navigation}) {
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: colorss.black,
-            borderRadius: 10,
+            borderRadius: 0,
             paddingHorizontal: 25,
           }}>
           {state.routes.map((route, index) => {
-            const {options} = descriptors[route.key];
+            const { options } = descriptors[route.key];
             const label =
               options.tabBarLabel !== undefined
                 ? options.tabBarLabel
                 : options.title !== undefined
-                ? options.title
-                : route.name;
+                  ? options.title
+                  : route.name;
             const icon = options.tabBarIcon;
             console.log(icon);
             const isFocused = state.index === index;
@@ -103,7 +103,7 @@ export default function MyTabBar({state, descriptors, navigation}) {
                 onLongPress={onLongPress}
                 style={{
                   marginVertical: 11,
-                  paddingVertical: 10,
+                  paddingVertical: 7,
                   borderRadius: 10,
                   width: '100%',
                   flex: 1,
@@ -113,19 +113,10 @@ export default function MyTabBar({state, descriptors, navigation}) {
                   alignItems: 'center',
                   backgroundColor: isFocused ? '#fff' : 'transparent',
                   justifyContent: 'center',
+                  borderRadius: 500
                 }}>
                 {icon(isFocused)}
-                {isFocused ? (
-                  <Text
-                    style={{
-                      fontSize: 13,
-                      color: '#4C09AA',
-                      fontWeight: '600',
-                      paddingLeft: 7,
-                    }}>
-                    {route.name}
-                  </Text>
-                ) : null}
+
               </TouchableOpacity>
             );
           })}
