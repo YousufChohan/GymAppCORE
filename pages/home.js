@@ -103,7 +103,7 @@ const DATA = [
           <View style={styles.card}>
             <Text style={styles.cardText}>Workout</Text>
             <TouchableOpacity>
-             <Text style={styles.button}>Routines</Text>
+             <Text onPress={()=>navigation.navigate('WorkoutSection')} style={styles.button}>Routines</Text>
             </TouchableOpacity>
             
           </View>

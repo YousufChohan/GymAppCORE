@@ -51,7 +51,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {setPromotions} from './reducers/promotions';
 import MyTabBar from './components/tabBar';
-
+import WorkoutSection from './pages/workoutSection';
 import ForgotEmail from './pages/forgotEmail';
 import {connectToSocket, socket} from './sockets/socketConfig';
 import {Notifications} from 'react-native-notifications';
@@ -268,6 +268,7 @@ const App = () => {
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="Notifications" component={NotificationScreen} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="WorkoutSection" component={WorkoutSection}/>
             {/* <Stack.Screen name="AddCompany" component={AddCompany} />
             <Stack.Screen name="UpdatePhone" component={UpdatePhone} />
             
