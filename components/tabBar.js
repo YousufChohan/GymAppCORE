@@ -51,6 +51,7 @@ export default function MyTabBar({ state, descriptors, navigation }) {
             position: 'absolute',
             bottom: -25,
             left: 0,
+            left: 0,
             zIndex: 20,
             flexDirection: 'row',
             backgroundColor: '#fff',
