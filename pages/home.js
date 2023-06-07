@@ -121,7 +121,11 @@ export default function Home({navigation}) {
             <View style={styles.card}>
               <Text style={styles.cardText}>Workout</Text>
               <TouchableOpacity>
-                <Text style={styles.button}>Routines</Text>
+                <Text
+                  onPress={() => navigation.navigate('WorkoutSection')}
+                  style={styles.button}>
+                  Routines
+                </Text>
               </TouchableOpacity>
             </View>
           </ImageBackground>
@@ -146,8 +150,7 @@ export default function Home({navigation}) {
             source={require('../images/wk3.jpg')}>
             <View style={styles.card}>
               <Text style={styles.cardText}>Meal Plans</Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('MealPlans')}>
+              <TouchableOpacity>
                 <Text style={styles.button}>Meal Plans</Text>
               </TouchableOpacity>
             </View>
@@ -267,8 +270,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 5,
     height: 25,
-    paddingHorizontal: 5,
-    //  width:70
+    width: 70,
   },
   peopleHeading: {
     flexDirection: 'row',

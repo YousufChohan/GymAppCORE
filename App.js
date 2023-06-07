@@ -51,7 +51,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {setPromotions} from './reducers/promotions';
 import MyTabBar from './components/tabBar';
-
+import WorkoutSection from './pages/workoutSection';
 import ForgotEmail from './pages/forgotEmail';
 import {connectToSocket, socket} from './sockets/socketConfig';
 import {Notifications} from 'react-native-notifications';
@@ -60,6 +60,7 @@ import {REACT_APP_BASE_URL} from '@env';
 import axios from 'axios';
 
 import ForgotPassword from './pages/forgotPassword';
+import ExerciseLibrary from './pages/exerciseLibrary';
 import MealPlans from './pages/mealPlans';
 
 const Stack = createNativeStackNavigator();
@@ -214,6 +215,79 @@ const App = () => {
                   resizeMode={'contain'}
                   source={
                     focused
+                      ? require('./images/home2.png')
+                      : require('./images/homegrey.png')
+                  }
+                  style={{width: 20, height: 20}}
+                />
+              );
+            },
+            tabBarShowLabel: true,
+          }}
+          name="Home1"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: focused => {
+              return (
+                <Image
+                  resizeMode={'contain'}
+                  source={
+                    focused
+                      ? require('./images/home2.png')
+                      : require('./images/homegrey.png')
+                  }
+                  style={{width: 20, height: 20}}
+                />
+              );
+            },
+            tabBarShowLabel: true,
+          }}
+          name="Home2"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: focused => {
+              return (
+                <View
+                  style={{width: 50, padding: 20, borderRadius: 500}}></View>
+              );
+            },
+            tabBarShowLabel: true,
+          }}
+          name="Home3"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: focused => {
+              return (
+                <Image
+                  resizeMode={'contain'}
+                  source={
+                    focused
+                      ? require('./images/home2.png')
+                      : require('./images/homegrey.png')
+                  }
+                  style={{width: 20, height: 20}}
+                />
+              );
+            },
+            tabBarShowLabel: true,
+          }}
+          name="Home4"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: focused => {
+              return (
+                <Image
+                  resizeMode={'contain'}
+                  source={
+                    focused
                       ? require('./images/envelope.png')
                       : require('./images/envelopegrey.png')
                   }
@@ -269,6 +343,8 @@ const App = () => {
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="Notifications" component={NotificationScreen} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="ExerciseLibrary" component={ExerciseLibrary} />
+            <Stack.Screen name="WorkoutSection" component={WorkoutSection} />
             <Stack.Screen name="MealPlans" component={MealPlans} />
 
             {/* <Stack.Screen name="AddCompany" component={AddCompany} />
