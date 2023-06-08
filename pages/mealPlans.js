@@ -30,133 +30,22 @@ import {
   State,
   TapGestureHandler,
 } from 'react-native-gesture-handler';
-import profile from '../images/pr.png';
+import meal from '../images/mealexample.jpg';
 import logo from '../images/CORE2.png';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg';
-import PeopleImage from '../components/homePeople';
+import MealCard from '../components/mealCard';
 export default function MealPlans({navigation}) {
-  const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
-      img: profile,
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
-      img: profile,
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-      img: profile,
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Foruth Item',
-      img: profile,
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: '5 Item',
-      img: profile,
-    },
-  ];
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
-        <View>
-          <ImageBackground
-            imageStyle={{borderRadius: 20}}
-            style={styles.imgbg}
-            source={require('../images/whitegradient.png')}>
-            <View style={styles.card}>
-              <Text style={styles.cardText}>Workout</Text>
-              <TouchableOpacity>
-                <Text style={styles.button}>Routines</Text>
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        </View>
-        <View>
-          <ImageBackground
-            imageStyle={{borderRadius: 20}}
-            style={styles.imgbg}
-            source={require('../images/whitegradient.png')}>
-            <View style={styles.card}>
-              <Text style={styles.cardText}>Workout</Text>
-              <TouchableOpacity>
-                <Text style={styles.button}>Routines</Text>
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        </View>
-        <View>
-          <ImageBackground
-            imageStyle={{borderRadius: 20}}
-            style={styles.imgbg}
-            source={require('../images/whitegradient.png')}>
-            <View style={styles.card}>
-              <View>
-                <Image
-                  style={styles.cardImage}
-                  source={require('../images/mealexample.jpg')}
-                />
-              </View>
-              <View
-                style={{
-                  marginLeft: 10,
-                  height: 150,
-                  width: '65%',
-                  // backgroundColor: colorss.black,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-evenly',
-                }}>
-                <View
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <Text style={styles.cardText}>Bhindi aur Loki</Text>
-                  <Text style={styles.button}>Sabzi</Text>
-                </View>
-                <View style={{display: 'flex', flexDirection: 'row'}}>
-                  <View style={{display: 'flex', flexDirection: 'row'}}>
-                    <Image
-                      style={styles.cardImage}
-                      source={require('../images/mealexample.jpg')}
-                    />
-                    <Text></Text>
-                  </View>
-                  <View style={{display: 'flex', flexDirection: 'row'}}></View>
-                </View>
-                <View style={{display: 'flex', flexDirection: 'row'}}>
-                  <Text style={styles.cardText}>Meal Type</Text>
-                  <Text style={styles.button}>Meal Type</Text>
-                </View>
-              </View>
-            </View>
-          </ImageBackground>
-        </View>
-
-        <View>
-          <ImageBackground
-            imageStyle={{borderRadius: 20}}
-            style={styles.imgbg}
-            source={require('../images/whitegradient.png')}>
-            <View style={styles.card}>
-              <Text style={styles.cardText}>Meal Plans</Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('ForgotPassword')}>
-                <Text style={styles.button}>Meal Plans</Text>
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        </View>
+        <MealCard />
+        <MealCard />
+        <MealCard />
+        <MealCard />
+        <MealCard />
+        <MealCard />
       </ScrollView>
     </SafeAreaView>
   );
@@ -280,5 +169,9 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     height: 125,
     resizeMode: 'contain',
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'column',
   },
 });
