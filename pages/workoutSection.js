@@ -35,6 +35,36 @@ const WorkoutSection = () => {
       <Text style={styles.bt}>Button with veeeeery long text   </Text>
       </ImageBackground>
      </View>
+     <View style={styles.tab2view}>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+     </View>
+     <View style={styles.tab2view}>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+     </View>
+     <View style={styles.tab2view}>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+      <View style={styles.tab2imgview}> 
+      <ImageBackground imageStyle={{borderRadius:10}} source={require('../images/trw.jpg')} style={styles.tab2img}>
+        <Text style={styles.tab2bbutton}>Hello</Text>
+      </ImageBackground></View>
+     </View>
      </ScrollView>
     </View>
   )
@@ -49,6 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width:'100%',
     height:'90%',
+    paddingBottom:10
     
   },
   scrollview:{
@@ -66,10 +97,11 @@ const styles = StyleSheet.create({
     textAlign:'center',
     alignItems: 'center',
     justifyContent:'center',
+    
   },
   tab1:{
     height:150,
-    backgroundColor:colorss.purple,
+    backgroundColor:'#0A456A',
     borderRadius:20, 
     textAlign:'center',
     alignItems: 'center',
@@ -91,7 +123,6 @@ const styles = StyleSheet.create({
     marginTop:10
   },
   tab2:{
-    
     backgroundColor:colorss.purple,
     borderRadius:20, 
     textAlign:'center',
@@ -100,7 +131,6 @@ const styles = StyleSheet.create({
     marginTop:20
   },
   imgbg:{
-   
     borderRadius:100,
     height:140,
     resizeMode:'contain',
@@ -117,10 +147,42 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     marginTop:10,
     fontSize:15,
-    paddingVertical:5,
-    borderRadius:5,
+    padding:5,
+    borderRadius:10,
     height:30,
-    fontWeight:'800'
+    fontWeight:'800',
+  },
+  tab2view:{
+    flexDirection:'row',
+    marginTop:10,
+    textAlign:'center',
+    alignItems: 'center',
+    justifyContent:'space-between',
     
+    
+  },
+  tab2imgview:{
+    width:'49%'
+  },
+  tab2img:{
+    width:'100%',
+    height:140,
+    resizeMode:'contain',
+    textAlign:'center',
+    alignItems: 'center',
+    justifyContent:'flex-end',
+    paddingBottom:15
+  },
+  tab2bbutton:{
+    backgroundColor:'grey',
+    color:colorss.white,
+    textAlign:'center',
+    alignItems: 'center',
+    justifyContent:'center',
+    fontSize:15,
+    padding:5,
+    borderRadius:10,
+    height:30,
+    fontWeight:'800',
   }
 })

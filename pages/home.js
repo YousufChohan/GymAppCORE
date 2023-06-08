@@ -36,6 +36,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg';
 import PeopleImage from '../components/homePeople';
+import CircularProgress from 'react-native-circular-progress-indicator';
 export default function Home({navigation}) {
   const DATA = [
     {
@@ -74,45 +75,39 @@ export default function Home({navigation}) {
           <Text style={styles.text2}>Reach Your Goals Today!</Text>
           <Image style={styles.image} source={profile}></Image>
         </View>
+  
 
         <View style={styles.tab}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon
-              style={{marginRight: 5}}
-              name="fire"
-              size={28}
-              color={colorss.orange}
-            />
-            <Text style={styles.tabText}>
-              Calories: <Text style={{color: colorss.purple}}>871 </Text>
-            </Text>
+          <CircularProgress
+           value={890}
+          maxValue={2000}
+          title='Calories'
+          activeStrokeColor={colorss.purple}
+          activeStrokeSecondaryColor={'#C25AFF'}
+/>
           </View>
 
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon2
-              style={{marginRight: 5}}
-              name="cup-water"
-              size={28}
-              color="#19D2F8"
-            />
-            <Text style={styles.tabText}>
-              Water: <Text style={{color: colorss.purple}}>10 glasses </Text>
-            </Text>
+          <CircularProgress
+           value={6000}
+          maxValue={10000}
+          title='Steps'
+          activeStrokeColor={colorss.orange}
+          activeStrokeSecondaryColor={'#C25AFF'}
+/>
           </View>
-        </View>
-        <View style={styles.tab}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon
-              style={{marginRight: 7}}
-              name="walking"
-              size={28}
-              color="#FFE000"
-            />
-            <Text style={styles.tabText}>
-              Steps: <Text style={{color: colorss.purple}}>12000 </Text>
-            </Text>
+          <CircularProgress
+           value={10}
+          maxValue={12}
+          title='Water '
+          activeStrokeColor={'#2465FD'}
+          activeStrokeSecondaryColor={'#C25AFF'}
+/>
           </View>
         </View>
+       
         <View>
           <ImageBackground
             imageStyle={{borderRadius: 20}}
@@ -200,6 +195,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '90%',
+    paddingBottom:100
   },
   scrollview: {
     width: '95%',
@@ -233,7 +229,6 @@ const styles = StyleSheet.create({
   },
   tab: {
     marginTop: '10%',
-
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
