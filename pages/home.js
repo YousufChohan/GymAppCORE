@@ -69,8 +69,13 @@ export default function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
-        <View style={styles.view}>
+     
+          <View style={styles.top}>
+          <Icon name='bell' size={28} color={colorss.orange}></Icon>
           <Image style={styles.logo} source={logo} />
+          <Text>hel</Text>
+          </View>
+          <View style={styles.view}>
           <Text style={styles.text1}>Welcome Muhammad</Text>
           <Text style={styles.text2}>Reach Your Goals Today!</Text>
           <Image style={styles.image} source={profile}></Image>
@@ -85,7 +90,7 @@ export default function Home({navigation}) {
           title='Calories'
           activeStrokeColor={colorss.purple}
           activeStrokeSecondaryColor={'#C25AFF'}
-/>
+             />
           </View>
 
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -95,7 +100,7 @@ export default function Home({navigation}) {
           title='Steps'
           activeStrokeColor={colorss.orange}
           activeStrokeSecondaryColor={'#C25AFF'}
-/>
+             />
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <CircularProgress
@@ -133,7 +138,7 @@ export default function Home({navigation}) {
             <View style={styles.card}>
               <Text style={styles.cardText}>Workout</Text>
               <TouchableOpacity>
-                <Text style={styles.button}>Routines</Text>
+                <Text style={styles.button2}>Routines</Text>
               </TouchableOpacity>
             </View>
           </ImageBackground>
@@ -147,7 +152,7 @@ export default function Home({navigation}) {
               <Text style={styles.cardText}>Meal Plans</Text>
               <TouchableOpacity
                 onPress={() => navigation.navigate('MealPlans')}>
-                <Text style={styles.button}>Meal Plans</Text>
+                <Text style={styles.button2}>Meal Plans</Text>
               </TouchableOpacity>
             </View>
           </ImageBackground>
@@ -195,27 +200,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '90%',
-    paddingBottom:100
+    paddingBottom:100,
+    
   },
   scrollview: {
     width: '95%',
     height: '100%',
     flex: 1,
   },
+  top:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  },
   logo: {
     resizeMode: 'contain',
-    height: 120,
+    height: 80,
+    width:160,
   },
   view: {
     display: 'flex',
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:20,
   },
   text1: {
     color: colorss.purple,
     fontSize: 30,
-    marginTop: '1%',
+   
   },
   text2: {
     marginTop: '7%',
@@ -259,7 +272,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   button: {
-    backgroundColor: colorss.orange,
+    backgroundColor: colorss.white,
+    color: colorss.orange,
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    borderRadius: 5,
+    height: 25,
+    paddingTop: 2,
+    paddingHorizontal: 5,
+    // width: 70,
+  },
+  button2: {
+    backgroundColor: 'grey',
     color: colorss.white,
     textAlign: 'center',
     alignItems: 'center',

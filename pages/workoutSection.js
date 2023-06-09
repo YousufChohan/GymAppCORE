@@ -15,15 +15,18 @@ import {
 import React from 'react'
 import {colorss} from '../components/colorss';
 import logo from '../images/CORE2.png'
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const WorkoutSection = () => {
   return (
     <View style={styles.container}>
        <ScrollView contentContainerStyle={{alignContent:'space-between'}} style={styles.scrollview}>
     
-    <View style={styles.view}>
-    <Image style={styles.logo} source={logo}/> 
-     </View> 
+       <View style={styles.top}>
+          <Icon name='bell' size={28} color={colorss.orange}></Icon>
+          <Image style={styles.logo} source={logo} />
+          <Text>hel</Text>
+          </View>
      <View style={styles.tab1}>
       <Text style={styles.tab1Text}>Test Text</Text>
       <Text style={styles.tab1Text2}>This is a long paragraph test text</Text>
@@ -79,7 +82,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width:'100%',
     height:'90%',
-    paddingBottom:10
+    paddingBottom:20
     
   },
   scrollview:{
@@ -90,7 +93,13 @@ const styles = StyleSheet.create({
   },
   logo:{
     resizeMode:'contain',
-    height:120
+    height: 80,
+    width:160,
+  },
+  top:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
   },
   view:{
     display:'flex',
