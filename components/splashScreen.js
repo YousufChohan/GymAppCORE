@@ -30,7 +30,7 @@ const SplashScreenModal = props => {
           // width: 250,
           // aspectRatio: 375 / 812,
           flexGrow: 1,
-          alignSelf: 'center',
+          // alignSelf: 'center',
         }}
         source={require('../images/SplashDumble.json')}
         loop={false}
@@ -38,7 +38,13 @@ const SplashScreenModal = props => {
         onAnimationFinish={handleAnimationFinish}
       />
       <Image
-        style={{alignSelf: 'center', width: 280, height: 250}}
+        style={{
+          alignSelf: 'center',
+          marginTop: 140,
+          width: 230,
+          height: 160,
+          resizeMode: 'contain',
+        }}
         source={require('../images/CORE2.png')}
       />
     </Modal>

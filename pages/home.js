@@ -69,50 +69,48 @@ export default function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
-     
-          <View style={styles.top}>
-          <Icon name='bell' size={28} color={colorss.orange}></Icon>
+        <View style={styles.top}>
+          <Icon name="bell" size={28} color={colorss.orange}></Icon>
           <Image style={styles.logo} source={logo} />
           <Text>hel</Text>
-          </View>
-          <View style={styles.view}>
+        </View>
+        <View style={styles.view}>
           <Text style={styles.text1}>Welcome Muhammad</Text>
           <Text style={styles.text2}>Reach Your Goals Today!</Text>
           <Image style={styles.image} source={profile}></Image>
         </View>
-  
 
         <View style={styles.tab}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <CircularProgress
-           value={890}
-          maxValue={2000}
-          title='Calories'
-          activeStrokeColor={colorss.purple}
-          activeStrokeSecondaryColor={'#C25AFF'}
-             />
+            <CircularProgress
+              value={890}
+              maxValue={2000}
+              title="Calories"
+              activeStrokeColor={colorss.purple}
+              activeStrokeSecondaryColor={'#C25AFF'}
+            />
           </View>
 
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <CircularProgress
-           value={6000}
-          maxValue={10000}
-          title='Steps'
-          activeStrokeColor={colorss.orange}
-          activeStrokeSecondaryColor={'#C25AFF'}
-             />
+            <CircularProgress
+              value={6000}
+              maxValue={10000}
+              title="Steps"
+              activeStrokeColor={colorss.orange}
+              activeStrokeSecondaryColor={'#C25AFF'}
+            />
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <CircularProgress
-           value={10}
-          maxValue={12}
-          title='Water '
-          activeStrokeColor={'#2465FD'}
-          activeStrokeSecondaryColor={'#C25AFF'}
-/>
+            <CircularProgress
+              value={6}
+              maxValue={12}
+              title="Water "
+              activeStrokeColor={'#2465FD'}
+              activeStrokeSecondaryColor={'#C25AFF'}
+            />
           </View>
         </View>
-       
+
         <View>
           <ImageBackground
             imageStyle={{borderRadius: 20}}
@@ -200,35 +198,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '90%',
-    paddingBottom:100,
-    
+    paddingBottom: 100,
   },
   scrollview: {
     width: '95%',
     height: '100%',
     flex: 1,
   },
-  top:{
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between'
+  top: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   logo: {
     resizeMode: 'contain',
     height: 80,
-    width:160,
+    width: 160,
   },
   view: {
     display: 'flex',
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop:20,
+    marginTop: 20,
   },
   text1: {
     color: colorss.purple,
     fontSize: 30,
-   
   },
   text2: {
     marginTop: '7%',
