@@ -13,6 +13,7 @@ import {
   Modal,
 } from 'react-native';
 import React, {useEffect, useState, useRef} from 'react';
+import TextField from '../components/inputField';
 
 import Animated, {
   Extrapolate,
@@ -30,22 +31,125 @@ import {
   State,
   TapGestureHandler,
 } from 'react-native-gesture-handler';
-import meal from '../images/mealexample.jpg';
+import meal from '../images/oranges.jpg';
 import logo from '../images/CORE2.png';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg';
 import MealCard from '../components/mealCard';
+import {RadioButton, TextInput} from 'react-native-paper';
+
 export default function MealPlans({navigation}) {
+  const [findMeal, setFindMeal] = useState('');
+  const DATA = [
+    {
+      id: '1',
+      img: require('../images/mango.jpg'),
+      mealName: 'Keenu',
+      mealType: 'Phal Fruit',
+      aag_temp: 200,
+      weight_temp: 167,
+      protein: 420,
+      fat: 69,
+      carbs: 975,
+    },
+    {
+      id: '2',
+      img: require('../images/apple.jpg'),
+      mealName: 'core',
+      mealType: 'gym ka Fruit',
+      aag_temp: 150,
+      weight_temp: 123,
+      protein: 345,
+      fat: 654,
+      carbs: 2234,
+    },
+    {
+      id: '3',
+      img: meal,
+      mealName: 'bhindi',
+      mealType: 'sabzi',
+      aag_temp: 534,
+      weight_temp: 4564,
+      protein: 154,
+      fat: 124,
+      carbs: 4362,
+    },
+    {
+      id: '4',
+      img: require('../images/mealexample.jpg'),
+      mealName: 'zabby',
+      mealType: 'gym ka landu',
+      aag_temp: 150,
+      weight_temp: 123,
+      protein: 345,
+      fat: 654,
+      carbs: 2234,
+    },
+    {
+      id: '5',
+      img: require('../images/TouristVisaimage.png'),
+      mealName: 'umer',
+      mealType: 'gym ka phushtu',
+      aag_temp: 150,
+      weight_temp: 123,
+      protein: 345,
+      fat: 654,
+      carbs: 2234,
+    },
+  ];
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollview}>
-        <MealCard />
-        <MealCard />
-        <MealCard />
-        <MealCard />
-        <MealCard />
-        <MealCard />
+        <SafeAreaView>
+          <View style={[styles.top]}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image
+                source={require('../images/back_icon.png')}
+                style={{width: 30, height: 30}}
+              />
+            </TouchableOpacity>
+            <Text style={styles.cardText}>Nutrition Library</Text>
+            <Image
+              source={require('../images/health-and-care.png')}
+              style={{width: 30, height: 30}}
+            />
+          </View>
+        </SafeAreaView>
+        <SafeAreaView style={{marginBottom: 2}}>
+          <TextField
+            label="Find more.."
+            onChangeText={text => setFindMeal(text)}
+            outlineColor={colorss.orange}
+            left={
+              <TextInput.Icon
+                name={() => (
+                  <Image
+                    resizeMode="contain"
+                    style={{width: 30}}
+                    source={require('../images/search.png')}
+                  />
+                )}
+              />
+            }
+          />
+        </SafeAreaView>
+        <FlatList
+          horizontal={false}
+          data={DATA}
+          renderItem={({item}) => (
+            <MealCard
+              image={item.img}
+              mealName={item.mealName}
+              mealType={item.mealType}
+              aag_temp={item.aag_temp}
+              weight_temp={item.weight_temp}
+              protein={item.protein}
+              fat={item.fat}
+              carbs={item.carbs}
+            />
+          )}></FlatList>
+        {/* <MealCard /> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -173,5 +277,15 @@ const styles = StyleSheet.create({
   row: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  top: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 10,
+    paddingTop: 10,
+    paddingBottom: 20,
+    borderColor: colorss.grey,
+    borderBottomWidth: 0.5,
   },
 });

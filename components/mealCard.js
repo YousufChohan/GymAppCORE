@@ -15,6 +15,7 @@ import {
 import React from 'react';
 import {colorss} from './colorss';
 import Dot from 'react-native-vector-icons/Octicons';
+import {RadioButton, TextInput} from 'react-native-paper';
 
 const MealCard = props => {
   return (
@@ -22,13 +23,10 @@ const MealCard = props => {
       <ImageBackground
         imageStyle={{borderRadius: 20}}
         style={styles.imgbg}
-        source={require('../images/whitegradient.png')}>
+        source={require('../images/orange_gradient.png')}>
         <View style={styles.card}>
           <View>
-            <Image
-              style={styles.cardImage}
-              source={require('../images/oranges.jpg')}
-            />
+            <Image style={styles.cardImage} source={props.image} />
           </View>
           <View
             style={{
@@ -46,21 +44,21 @@ const MealCard = props => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
               }}>
-              <Text style={styles.mealName}>Keenu</Text>
-              <Text style={styles.button}>Phal Fruit</Text>
+              <Text style={styles.mealName}>{props.mealName}</Text>
+              <Text style={styles.button}>{props.mealType}</Text>
             </View>
             <View style={styles.row}>
               <Image
                 style={styles.icon}
                 source={require('../images/fire.png')}
               />
-              <Text style={styles.cardText2}>200</Text>
+              <Text style={styles.cardText2}>{props.aag_temp}</Text>
 
               <Image
                 style={[styles.icon, {marginLeft: 20}]}
                 source={require('../images/weight-scale.png')}
               />
-              <Text style={styles.cardText2}>200</Text>
+              <Text style={styles.cardText2}>{props.weight_temp}</Text>
             </View>
 
             <View style={styles.row}>
@@ -70,14 +68,14 @@ const MealCard = props => {
                 size={24}
                 color={colorss.green}
               />
-              <Text style={styles.cardText3}>420g Protein</Text>
+              <Text style={styles.cardText3}>{props.protein}g Protein</Text>
               <Dot
                 style={{marginHorizontal: 5}}
                 name="dot-fill"
                 size={24}
                 color={colorss.yellow}
               />
-              <Text style={styles.cardText3}>69g Fat</Text>
+              <Text style={styles.cardText3}>{props.fat}g Fat</Text>
             </View>
             <View style={styles.row}>
               <Dot
@@ -86,7 +84,7 @@ const MealCard = props => {
                 size={24}
                 color={colorss.red}
               />
-              <Text style={styles.cardText3}>23g Carbohydrates</Text>
+              <Text style={styles.cardText3}>{props.carbs}g Carbohydrates</Text>
             </View>
           </View>
         </View>

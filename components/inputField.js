@@ -9,14 +9,16 @@ export default function InputField(props) {
       theme={{roundness: 10}}
       mode="outlined"
       activeOutlineColor={colorss.orange}
-      outlineColor={colorss.purple}
+      outlineColor={props.outlineColor}
       style={styles.InputFieldStyle}
       ref={props.innerRef}
       {...props}
     />
   );
 }
-
+InputField.defaultProps = {
+  outlineColor: colorss.purple,
+};
 const styles = StyleSheet.create({
   InputFieldStyle: {
     backgroundColor: '#FFF',

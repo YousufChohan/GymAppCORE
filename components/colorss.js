@@ -7,4 +7,5 @@ export const colorss = {
   green: '#7CFC00',
   yellow: '#FFEA00',
   bg: '#1f1f1f',
+  grey: '#808080 ',
 };
