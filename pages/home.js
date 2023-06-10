@@ -167,7 +167,7 @@ export default function Home({navigation}) {
                 horizontal={true}
                 data={DATA}
                 renderItem={({item}) => (
-                  <PeopleImage image={item.img} text={item.title} />
+                  <PeopleImage  image={item.img} text={item.title} />
                 )}></FlatList>
             </ScrollView>
           </View>

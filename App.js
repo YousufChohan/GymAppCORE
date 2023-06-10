@@ -62,6 +62,9 @@ import axios from 'axios';
 import ForgotPassword from './pages/forgotPassword';
 import ExerciseLibrary from './pages/exerciseLibrary';
 import MealPlans from './pages/mealPlans';
+import Profile from './pages/profile';
+import HomePeople from './components/homePeople';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -315,9 +318,9 @@ const App = () => {
                 />
               );
             },
-            // tabBarShowLabel: false,
+            // tabBarShowLabel: false,0
           }}
-          name="Profile"
+          name="Profile1"
           component={Home}
           disab
         />
@@ -346,6 +349,9 @@ const App = () => {
             <Stack.Screen name="ExerciseLibrary" component={ExerciseLibrary} />
             <Stack.Screen name="WorkoutSection" component={WorkoutSection} />
             <Stack.Screen name="MealPlans" component={MealPlans} />
+           
+            <Stack.Screen name="homePeople" component={HomePeople} />
+            <Stack.Screen name="Profile" component={Profile} />
 
             {/* <Stack.Screen name="AddCompany" component={AddCompany} />
             <Stack.Screen name="UpdatePhone" component={UpdatePhone} />
