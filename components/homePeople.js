@@ -13,13 +13,15 @@ import {
     Modal,
   } from 'react-native';
   import React from 'react'
+  import { useNavigation } from '@react-navigation/native';
 const HomePeople = (props) => {
+  const navigation = useNavigation();
   return (
     
-    <View >
+    <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
     <Image style={styles.image2} source={props.image}></Image>
     <Text>{props.text}</Text>
-    </View>
+    </TouchableOpacity>
     
   )
 }
