@@ -37,7 +37,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import wk1 from '../images/wk1.jpg';
 import MealCard from '../components/mealCard';
-import {RadioButton, TextInput} from 'react-native-paper';
+import {Button, RadioButton, TextInput} from 'react-native-paper';
 
 export default function MealPlans({navigation}) {
   const [findMeal, setFindMeal] = useState('');
@@ -114,6 +114,27 @@ export default function MealPlans({navigation}) {
               source={require('../images/health-and-care.png')}
               style={{width: 30, height: 30}}
             />
+          </View>
+        </SafeAreaView>
+        <SafeAreaView>
+          <View>
+            <ScrollView horizontal={true} style={styles.filters}>
+              <TouchableOpacity>
+                <Text style={styles.filterButton}>Grains and Seeds</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text style={styles.filterButton}>Fats</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text style={styles.filterButton}>Milk</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text style={styles.filterButton}>Fruits</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text style={styles.filterButton}>Vegetables</Text>
+              </TouchableOpacity>
+            </ScrollView>
           </View>
         </SafeAreaView>
         <SafeAreaView style={{marginBottom: 2}}>
@@ -282,10 +303,35 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 10,
+    marginTop: 10,
     paddingTop: 10,
     paddingBottom: 20,
     borderColor: colorss.grey,
     borderBottomWidth: 0.5,
+  },
+  filters: {
+    display: 'flex',
+    flexDirection: 'row',
+    // justifyContent: 'space-evenly',
+    marginVertical: 10,
+    // paddingTop: 10,
+    paddingBottom: 10,
+    borderColor: colorss.grey,
+    borderBottomWidth: 0.5,
+  },
+  filterButton: {
+    backgroundColor: colorss.orange,
+    color: colorss.white,
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // marginTop: 10,
+    borderRadius: 5,
+    marginRight: 10,
+    height: 40,
+    fontSize: 20,
+    paddingTop: 5,
+    paddingHorizontal: 15,
+    //  width:70
   },
 });
